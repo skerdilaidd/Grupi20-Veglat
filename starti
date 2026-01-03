@@ -1,0 +1,20 @@
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main() {
+    const int NUMRI_PUNETOREVE = 10;
+
+    int nr = 0;
+    int oret_punes = 0;
+    double paga = 0.0;
+
+    double paga_totale = 0.0;
+    double paga_mesatare = 0.0;
+    double paga_max = 0.0;
+    double paga_min = 0.0;
+
+    cout << "=== PROGRAMI PER LLOGARITJEN E PAGAVE ===" << endl;
+    cout << "Pagesa per ore: 15 euro" << endl;
+    cout << "Numri i punetoreve: " << NUMRI_PUNETOREVE << endl;
+    cout << "---------------------------------------" << endl;
