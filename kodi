@@ -1,0 +1,63 @@
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main() {
+    const int NUMRI_PUNETOREVE = 10;
+
+    int nr = 0;
+    int oret_punes = 0;
+    double paga = 0.0;
+
+    double paga_totale = 0.0;
+    double paga_mesatare = 0.0;
+    double paga_max = 0.0;
+    double paga_min = 0.0;
+
+    cout << "=== PROGRAMI PER LLOGARITJEN E PAGAVE ===" << endl;
+    cout << "Pagesa per ore: 15 euro" << endl;
+    cout << "Numri i punetoreve: " << NUMRI_PUNETOREVE << endl;
+    cout << "---------------------------------------" << endl;
+
+    while (nr < NUMRI_PUNETOREVE) {
+        cout << "\nPunetori #" << nr + 1 << endl;
+        cout << "Shkruaj oret e punes (0 - 48): ";
+        cin >> oret_punes;
+
+        if (oret_punes >= 0 && oret_punes <= 48) {
+            paga = oret_punes * 15;
+
+            cout << "Paga e punetorit: "
+                 << fixed << setprecision(2)
+                 << paga << " euro" << endl;
+
+            paga_totale += paga;
+
+            if (nr == 0) {
+                paga_max = paga;
+                paga_min = paga;
+            } else {
+                if (paga > paga_max) paga_max = paga;
+                if (paga < paga_min) paga_min = paga;
+            }
+
+            nr++;
+        } else {
+            cout << "Gabim ne te dhenat!" << endl;
+            cout << "Shkruani oret ne intervalin 0 - 48." << endl;
+        }
+    }
+
+    paga_mesatare = paga_totale / NUMRI_PUNETOREVE;
+
+    cout << "\n=======================================" << endl;
+    cout << "STATISTIKAT PERFUNDIMTARE" << endl;
+    cout << "---------------------------------------" << endl;
+    cout << "Paga totale: " << paga_totale << " euro" << endl;
+    cout << "Paga mesatare: " << paga_mesatare << " euro" << endl;
+    cout << "Paga maksimale: " << paga_max << " euro" << endl;
+    cout << "Paga minimale: " << paga_min << " euro" << endl;
+    cout << "=======================================" << endl;
+
+    return 0;
+}
